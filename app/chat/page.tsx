@@ -5,6 +5,7 @@ import EventsModal from "@/components/EventModal"
 import BotMessage from "@/components/Messages/BotMessage"
 import UserMessage from "@/components/Messages/UserMessage"
 import { IChatMessage } from "@/definitions/interfaces/IChatMessage"
+import { Event } from "@/definitions/types/event"
 import { useState, useEffect, useRef, Fragment } from "react"
 
 export default function Chatbot() {
@@ -12,6 +13,7 @@ export default function Chatbot() {
   const [input, setInput] = useState("")
   const [history, setHistory] = useState<IChatMessage[]>([])
   const messagesEndRef = useRef<HTMLDivElement | null>(null)
+  const [events, setEvent] = useState<Event[] | null>(null)
 
   async function hasEvents(res) {
     return false
@@ -47,6 +49,8 @@ export default function Chatbot() {
         method: "POST"
       })
       if (await hasEvents(res)) {
+        const eventData = (await res.json())
+        setEvent(eventData)
         openModal()
       } else {
         const botMessage: IChatMessage = {
@@ -70,7 +74,7 @@ export default function Chatbot() {
   return (
     <>
       {" "}
-      <EventsModal isOpen={isOpen} closeModal={closeModal} />
+      <EventsModal isOpen={isOpen} closeModal={closeModal} events={events}/>
       <div className="chat-wrapper px-5 flex flex-col justify-between">
         <div className="px-[3vh]" style={{ overflowY: "auto" }}>
           {history.map((msg) => (

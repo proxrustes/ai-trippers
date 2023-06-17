@@ -2,13 +2,15 @@ import { Transition, Dialog } from "@headlessui/react"
 import { DUMMY_EVENT_DATA } from "@/data/dummydata.events"
 import EventGrid from "@/components/EventGrid/EventGrid"
 import { Fragment } from "react"
+import { Event } from "@/definitions/types/event"
 
 interface EventsModalProps {
   isOpen: boolean
   closeModal: () => void
+  events: Event[]
 }
 
-const EventsModal: React.FC<EventsModalProps> = ({ isOpen, closeModal }) => {
+const EventsModal: React.FC<EventsModalProps> = ({ isOpen, closeModal, events }) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -38,7 +40,7 @@ const EventsModal: React.FC<EventsModalProps> = ({ isOpen, closeModal }) => {
               <Dialog.Panel className="dialog-panel transform">
                 <Dialog.Title className="text-[4vh] font-black">SUGGESTED EVENTS</Dialog.Title>
                 <div>
-                  <EventGrid events={DUMMY_EVENT_DATA} />
+                  <EventGrid events={events} />
                   <button type='button' className="button" onClick={closeModal}>
                     BROWSE FURTHER
                   </button>
