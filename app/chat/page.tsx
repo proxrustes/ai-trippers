@@ -1,12 +1,12 @@
 "use client"
 
-import EventGrid from "@/components/EventGrid/EventGrid";
+import { ShowEvent } from "@/components/ShowEvent"
 
 export default function Chat(){
 
     return(
         <div>
-  
+  <ShowEvent/>
         </div>
     )
   }

@@ -9,8 +9,9 @@ body {
 button, a.button{
   font-size: 2.75vh;
   color:  #283044;
-  font-weight: 600;
+  font-weight: 700;
   background-color: #78A1BB;
+  border: 0.3vh solid #78A1BB;
   padding: 1.3vh 4vh 1.3vh 4vh;
   transition-property: all;
   border-radius: 1vh;
@@ -18,8 +19,9 @@ button, a.button{
 
 button:hover, a.button:hover{
   background-color: #283044;
-  color: black;
-  transition-duration: 300ms;
+  color: #78A1BB;
+  border: 0.3vh solid #78A1BB;
+  transition-duration: 100ms;
 }
 
 .dialog-panel{

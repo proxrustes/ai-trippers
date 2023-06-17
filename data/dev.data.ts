@@ -8,19 +8,19 @@ export const DEV_DATA: Dev[] = [
   {
     id: 0,
     username: "VALDIMAR",
-    role: "ROLE DESCRIPTION",
+    role: "PROMPT ENGINEER",
     link: valdimar
   },
   {
     id: 1,
     username: "JESUS",
-    role: "Role desc",
+    role: "DATA ENGINEER",
     link: jesus
   },
   {
     id: 2,
     username: "THOMAS",
-    role: "Role desc",
+    role: "PIPELINE GUY",
     link: thomas
   },
   {
