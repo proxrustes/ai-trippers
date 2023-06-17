@@ -6,7 +6,7 @@ interface Props {
   }
 
 export default function DevGrid({ dev }: Props){
-    return(<div  className="flex justify-between px-[15vw]"
+    return(<div className="flex justify-between px-[15vw]"
       >
         {dev.map((dev) => <DevCard key={dev.id} dev={dev}/>)}
         </div>)

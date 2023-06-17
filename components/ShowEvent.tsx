@@ -1,5 +1,4 @@
 import { DUMMY_EVENT_DATA } from "@/data/dummydata.events"
-import { Event } from "@/definitions/types/event"
 import { Dialog, Transition } from "@headlessui/react"
 import { Fragment, useState } from "react"
 import EventGrid from "./EventGrid/EventGrid"
@@ -20,7 +19,7 @@ export function ShowEvent() {
         <center>
           <button className="button"
             onClick={openModal}>
-            Create Event
+            SHOW SUGGESTED EVENTS
           </button>
         </center>
         <Transition appear show={isOpen} as={Fragment}>
