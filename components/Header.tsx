@@ -1,7 +1,7 @@
 export default function Header(){
     return(
-        <div className="text-lef mt-[1vh] px-[1vw]">
-        <p className="text-[4vh] italic font-black">AiT</p>
+        <div className="sticky top-0 text-lef px-[1vw]">
+        <a href="/" className="text-[4vh] italic font-black">AiT</a>
         </div>
     )
 }
