@@ -16,7 +16,8 @@ export default function Chatbot() {
   };
 
   const handleSend = async () => {
-    const userMessage: IChatMessage = {
+    if(input){
+       const userMessage: IChatMessage = {
       message: input,
       time: new Date().toISOString(),
       user: 'user',
@@ -40,6 +41,8 @@ export default function Chatbot() {
     setHistory((prevHistory) => [...prevHistory, botMessage]);
     
     setInput('');
+    }
+   
 
   };
 
@@ -50,18 +53,19 @@ export default function Chatbot() {
   }, [history]);
 
   return (
-        <div className="chat-wrapper" style={{ display: 'flex', flexDirection: 'column'}}>
-          <div style={{ overflowY: 'auto' }}>
+        <div className="chat-wrapper px-5 flex flex-col justify-between">
+                  <div className="px-[3vh]" style={{ overflowY: 'auto' }}>
             {history.map((msg, idx) => (
-               <p key={idx}>
+               <div className="max-w-full" key={idx}>
                { msg.user == 'bot'? <BotMessage message={msg.message}/> : <UserMessage message={msg.message}/>}
-            </p>
+            </div>
             ))}
-            <div ref={messagesEndRef} />
-          </div>
+            <div ref={messagesEndRef} /></div>
           <div style={{ marginTop: 'auto' }}>
+            <div className='flex gap-x-[2vh]'>
             <input value={input} onChange={handleInputChange} />
             <button onClick={handleSend}>Send</button>
+            </div>
           </div>
         </div>
       );

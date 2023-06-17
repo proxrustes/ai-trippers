@@ -1,7 +1,8 @@
 interface Props {
 	message: string
 }
-
 export default function BotMessage({ message }: Props){
-return(<h1>{message}</h1>)
+    return(<div className="flex justify-start mb-4">
+        <h1 className="block bg-black w-max-content rounded-[3vh] px-[2vh]">{message}</h1>
+        </div>)
 }
