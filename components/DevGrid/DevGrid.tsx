@@ -1,5 +1,5 @@
 import { Dev } from "@/definitions/types/dev"
-import UserCard from "./UserCard"
+import DevCard from "./DevCard"
 
 interface Props {
   dev: Dev[]
@@ -8,6 +8,6 @@ interface Props {
 export default function DevGrid({ dev }: Props){
     return(<div  className="flex justify-between px-[15vw]"
       >
-        {dev.map((dev) => <UserCard key={dev.id} dev={dev}/>)}
+        {dev.map((dev) => <DevCard key={dev.id} dev={dev}/>)}
         </div>)
 }

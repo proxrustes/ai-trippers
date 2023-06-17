@@ -45,13 +45,22 @@ input{
   padding-bottom: 1.5vw;
   height: 70vh;
   h1{
-    background-color: rgb(0, 0, 0);
     display: block;
     margin: auto;
-    padding: 0 4px 0 4px;
     border-radius: 5px;
     width: max-content;
     font-weight: 800;
-    font-size: large;
+    font-size: 3vh;
+  }
+  h2{
+    color: #283044;
+    display: block;
+    width: max-content;
+    font-size: 1.5vh;
+    font-weight:900;
+    border-radius: 3vh;
+    margin: auto;
+    background-color: #78A1BB;
+    padding: 0.5vh 2vh 0.5vh 2vh;
   }
 }
