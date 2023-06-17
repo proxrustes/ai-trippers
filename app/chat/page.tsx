@@ -14,7 +14,7 @@ export default function Chatbot() {
   const messagesEndRef = useRef<HTMLDivElement | null>(null)
 
   async function hasEvents(res) {
-    return true
+    return false
   }
 
   function closeModal() {
@@ -43,13 +43,14 @@ export default function Chatbot() {
         headers: {
           "Content-type": "application/json"
         },
+        body: input,
         method: "POST"
       })
       if (await hasEvents(res)) {
         openModal()
       } else {
         const botMessage: IChatMessage = {
-          message: await res.json(),
+          message: "await res.json()",
           time: new Date().toISOString(),
           user: "bot"
         }
