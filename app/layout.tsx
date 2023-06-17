@@ -5,7 +5,7 @@ import Header from "@/components/Header"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Ubi-Googles"
+  title: "AiT"
 }
 
 export default function RootLayout({
