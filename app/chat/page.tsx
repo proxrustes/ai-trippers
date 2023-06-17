@@ -1,12 +1,11 @@
-"use client"
+"use client";
 
-import { ShowEvent } from "@/components/ShowEvent"
+import { ShowEvent } from "@/components/ShowEvent";
 
-export default function Chat(){
-
-    return(
-        <div>
-  <ShowEvent/>
-        </div>
-    )
-  }
+export default function Chat() {
+	return (
+		<div>
+			<ShowEvent />
+		</div>
+	);
+}
