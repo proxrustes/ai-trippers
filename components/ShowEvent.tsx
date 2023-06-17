@@ -1,11 +1,10 @@
+import { DUMMY_EVENT_DATA } from "@/data/dummydata.events"
 import { Event } from "@/definitions/types/event"
 import { Dialog, Transition } from "@headlessui/react"
 import { Fragment, useState } from "react"
+import EventGrid from "./EventGrid/EventGrid"
 
-interface Props{
-    event: Event
-}
-export function ShowEvent({ event }: Props) {
+export function ShowEvent() {
     let [isOpen, setIsOpen] = useState(false)
   
     function closeModal() {
@@ -19,8 +18,7 @@ export function ShowEvent({ event }: Props) {
     return (
       <>
         <center>
-          <button
-            type="button"
+          <button className="button"
             onClick={openModal}>
             Create Event
           </button>
@@ -40,7 +38,7 @@ export function ShowEvent({ event }: Props) {
             </Transition.Child>
   
             <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <div className="flex min-h-full items-center justify-center p-[2vh] text-center">
                 <Transition.Child
                   as={Fragment}
                   enter="ease-out duration-300"
@@ -52,19 +50,16 @@ export function ShowEvent({ event }: Props) {
                 >
                   <Dialog.Panel className="dialog-panel transform">
                     <Dialog.Title
-                      className="text-lg font-medium leading-6"
+                      className="text-[4vh] font-black"
                     >
-                     SCHEDULE AN EVENT
+                    SUGGESTED EVENTS
                     </Dialog.Title>
-                    <div className="mt-2">
-                    <p>Title</p>
-                    <p>Description</p>
-                    </div>
-                    <div className="mt-4">
-                      <button
+                    <div>
+                   <EventGrid events={DUMMY_EVENT_DATA} />
+                      <button className="button"
                         onClick={closeModal}
                       >
-                        Got it, thanks!
+                        BROWSE FURTHER
                       </button>
                     </div>
                   </Dialog.Panel>
