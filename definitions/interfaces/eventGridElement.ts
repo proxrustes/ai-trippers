@@ -1,5 +1,5 @@
 export type EventGridElement = {
-	title: string;
-	decsription: string;
-	date: string;
-};
+  title: string
+  decsription: string
+  date: string
+}

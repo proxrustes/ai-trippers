@@ -1,5 +1,5 @@
 export interface IServerResponse {
-    data: {
-      message: string;
-    }
+  data: {
+    message: string
   }
+}
